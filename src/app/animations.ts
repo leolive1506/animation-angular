@@ -17,3 +17,27 @@ export const highlightedStateTrigger = trigger('highlightedState', [
     animate(200)
   ])
 ])
+
+export const showStateTrigger = trigger('showState', [
+  
+  // state('notShown', style({
+    
+  // })),
+  state('shown', style({
+
+  })),
+  // void pq o formulário ainda não existe na DOM
+  transition('void => show', [
+    style({
+      opacity: 0
+    }),
+    animate(300, style({
+      opacity: 1
+    }))
+  ]),
+  transition('show => void', [
+    animate(300, style({
+      opacity: 0
+    }))
+  ])
+])

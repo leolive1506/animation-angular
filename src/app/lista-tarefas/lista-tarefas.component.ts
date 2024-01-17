@@ -4,14 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
-import { highlightedStateTrigger } from '../animations';
+import { highlightedStateTrigger, showStateTrigger } from '../animations';
 
 @Component({
   selector: 'app-lista-tarefas',
   templateUrl: './lista-tarefas.component.html',
   styleUrls: ['./lista-tarefas.component.css'],
   // animations: [trigger('nome', arrayMetados)]
-  animations: [highlightedStateTrigger]
+  animations: [highlightedStateTrigger, showStateTrigger]
 })
 
 export class ListaTarefasComponent implements OnInit {

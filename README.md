@@ -38,11 +38,16 @@
 
 ## Boas praticas
 Separa arquivo de animações e o do componente
+
+# Dicas gerais
+- [Visualizar qual ease function escolher](https://easings.net/#)
+
 # Aprendizados
 - Utilizar o método Trigger para engatilhar as animações;
 - Configurar o Trigger com os States;
 - Definir o Style para cada State de animação;
 - Integrar o Trigger ao Template com o auxílio do property binding
-
-# Dicas gerais
-- [Visualizar qual ease function escolher](https://easings.net/#)
+- Utilizar o método transition para animar uma transição entre estados;
+- Aplicar estilos temporários durante a transição;
+- Controlar a duração da animação através do método animate;
+- Exportar animações e importá-las nos metadados do componente.
