@@ -161,3 +161,5 @@ Separa arquivo de animações e o do componente
 - Melhorar o código com os alias :enter e :leave.
 - Utilizar keyframes e offset para criar transições suaves;
 - Acrescentar a função cubic-bezier para personalizar a animação.
+- Criar animações simultâneas com o método group;
+- Utilizar o query para animar elementos específicos;

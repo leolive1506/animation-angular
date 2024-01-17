@@ -5,11 +5,13 @@
     </button>
   </div>
   <form
-  @showState
-  class="formulario ff-prompt"
+    @showState
+    class="formulario ff-prompt"
     [formGroup]="formulario"
     [@formButton]="formulario.valid ? 'valid' : 'invalid'"
-    *ngIf="formAberto">
+    *ngIf="formAberto"
+    [@shakeAnimation]="formulario.value"
+  >
     <label for="descricao">Descrição da tarefa</label>
     <input required
       type="text"
