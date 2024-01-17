@@ -114,6 +114,16 @@ animate('400ms ease-out', keyframes([
 
 ## [cubic-bezier](https://cubic-bezier.com/#.17,.67,.83,.67)
 
+## group()
+```ts
+transition('invalid => valid', [
+  group([
+    animate(200, style({ backgroundColor: '#63B77C' })),
+    animate(100, style({ transform: 'scale(1.1)' })),
+    animate(200, style({ transform: 'scale(1)' }))
+  ]),
+]),
+```
 ## Boas praticas
 Separa arquivo de animações e o do componente
 
