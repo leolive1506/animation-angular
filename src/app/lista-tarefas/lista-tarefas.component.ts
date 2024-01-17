@@ -127,6 +127,11 @@ export class ListaTarefasComponent implements OnInit {
     this.service.atualizarStatusTarefa(tarefa)
   }
 
+  desmarcarTarefa(tarefa: Tarefa) {
+    this.id = 0;
+    this.service.atualizarStatusTarefa(tarefa)
+  }
+
   habilitarBotao(): string {
     if (this.formulario.valid) {
       return 'botao-salvar';
