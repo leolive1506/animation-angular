@@ -124,6 +124,22 @@ transition('invalid => valid', [
   ]),
 ]),
 ```
+
+## query()
+- recebe elemento ou outros seletores, anima elementos especificos pelo nome elemento, id, class
+- ao usar, precisar animar o elemento pai e faz a consulta em elementos filhos
+```ts
+transition('invalid => valid', [
+  query('button', [
+    group([
+      animate(200, style({ backgroundColor: '#63B77C' })),
+      animate(100, style({ transform: 'scale(1.1)' })),
+      animate(200, style({ transform: 'scale(1)' }))
+    ]),
+  ])
+]),
+```
+
 ## Boas praticas
 Separa arquivo de animações e o do componente
 

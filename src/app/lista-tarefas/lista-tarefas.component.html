@@ -5,9 +5,10 @@
     </button>
   </div>
   <form
-    @showState
-    class="formulario ff-prompt"
+  @showState
+  class="formulario ff-prompt"
     [formGroup]="formulario"
+    [@formButton]="formulario.valid ? 'valid' : 'invalid'"
     *ngIf="formAberto">
     <label for="descricao">Descrição da tarefa</label>
     <input required
@@ -52,9 +53,9 @@
       <button
         (click)="salvarTarefa()"
         class="botao-form"
+        id="botao-salvar"
         [ngClass]="habilitarBotao()"
         [disabled]="!formulario.valid"
-        [@formButton]="formulario.valid ? 'valid' : 'invalid'"
       >
           Salvar
       </button>
