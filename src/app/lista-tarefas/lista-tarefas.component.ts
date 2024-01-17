@@ -4,29 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
-import { animate, state, style, transition, trigger } from '@angular/animations';
+import { highlightedStateTrigger } from '../animations';
 
 @Component({
   selector: 'app-lista-tarefas',
   templateUrl: './lista-tarefas.component.html',
   styleUrls: ['./lista-tarefas.component.css'],
   // animations: [trigger('nome', arrayMetados)]
-  animations: [trigger('highlightedState', [
-    state('default', style({
-      // valor deve ser sempre entre aspas simples
-      border: '2px solid #B2B6FF',
-    })),
-    state('highlighted', style({
-      border: '4px solid #B2B6FF',
-      filter: 'brightness(92%)'
-    })),
-    transition('default => highlighted', [
-      style({
-        transform: 'scale(1.02)'
-      }),
-      animate(200)
-    ])
-  ])]
+  animations: [highlightedStateTrigger]
 })
 
 export class ListaTarefasComponent implements OnInit {

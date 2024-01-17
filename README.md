@@ -16,7 +16,14 @@
     state('highlighted', style({
       border: '4px solid #B2B6FF',
       filter: 'brightness(92%)'
-    }))
+    })),
+    transition('default => highlighted', [
+      // animate('duracao delay ease-function'),
+      animate('200ms ease-out', style({
+        transform: 'scale(1.02)'
+      })),
+      animate(200)
+    ])
   ])]
 })
 ```
@@ -29,8 +36,13 @@
 ></div>
 ```
 
+## Boas praticas
+Separa arquivo de animações e o do componente
 # Aprendizados
 - Utilizar o método Trigger para engatilhar as animações;
 - Configurar o Trigger com os States;
 - Definir o Style para cada State de animação;
 - Integrar o Trigger ao Template com o auxílio do property binding
+
+# Dicas gerais
+- [Visualizar qual ease function escolher](https://easings.net/#)
