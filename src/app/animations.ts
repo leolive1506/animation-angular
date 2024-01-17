@@ -19,15 +19,8 @@ export const highlightedStateTrigger = trigger('highlightedState', [
 ])
 
 export const showStateTrigger = trigger('showState', [
-  
-  // state('notShown', style({
-    
-  // })),
-  state('shown', style({
-
-  })),
   // void pq o formulário ainda não existe na DOM
-  transition('void => show', [
+  transition(':enter', [
     style({
       opacity: 0
     }),
@@ -35,7 +28,7 @@ export const showStateTrigger = trigger('showState', [
       opacity: 1
     }))
   ]),
-  transition('show => void', [
+  transition(':leave', [
     animate(300, style({
       opacity: 0
     }))

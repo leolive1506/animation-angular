@@ -39,6 +39,48 @@
 ## Boas praticas
 Separa arquivo de animações e o do componente
 
+## Animation
+- quando elemento não existe necessário usar void => state para animação funcionar
+  - comum em ngIf, ngFor
+```ts
+// <form [@showState]="formAberto ? 'show' : 'notShow'"
+export const showStateTrigger = trigger('showState', [
+  // state('notShown', style({ })),
+  state('shown', style({  })),
+  transition('void => show', [
+    style({ opacity: 0 }),
+    animate(300, style({ opacity: 1 }))
+  ]),
+  transition('show => void', [
+    animate(300, style({ opacity: 0 }))
+  ])
+])
+
+// segunda forma de fazer
+// <form @showState
+export const showStateTrigger = trigger('showState', [
+  // void pq o formulário ainda não existe na DOM
+  transition('void => *', [
+    style({ opacity: 0 }),
+    animate(300, style({ opacity: 1 }))
+  ]),
+  transition('* => void', [
+    animate(300, style({ opacity: 0 }))
+  ])
+])
+
+// terceira forma de fazer
+// <form @showState
+export const showStateTrigger = trigger('showState', [
+  transition(':enter', [
+    style({ opacity: 0 }),
+    animate(300, style({ opacity: 1 }))
+  ]),
+  transition(':leave', [
+    animate(300, style({ opacity: 0 }))
+  ])
+])
+```
 # Dicas gerais
 - [Visualizar qual ease function escolher](https://easings.net/#)
 
