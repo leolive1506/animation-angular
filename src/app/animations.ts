@@ -108,6 +108,6 @@ export const shakeTrigger = trigger('shakeAnimation', [
         style({ transform: 'translateX(2%)' }),
         style({ transform: 'translateX(0%)' }),
       ]))
-    ])
+    ], { optional: true })
   ])
 ])

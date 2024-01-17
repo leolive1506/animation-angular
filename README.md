@@ -128,6 +128,7 @@ transition('invalid => valid', [
 ## query()
 - recebe elemento ou outros seletores, anima elementos especificos pelo nome elemento, id, class
 - ao usar, precisar animar o elemento pai e faz a consulta em elementos filhos
+- **OBS:** caso não exista o elemento, lançara uma exception, para não estourar esse erro, basta após o array passa { optional: true }
 ```ts
 transition('invalid => valid', [
   query('button', [
@@ -143,6 +144,12 @@ transition('invalid => valid', [
 ## Boas praticas
 Separa arquivo de animações e o do componente
 
+# BehaviorSubject
+- capaz de criar serviços reativos e atualizar os dados automáticamente sempre que acontece alguma mudança
+- variante do subject
+  - tipo especial que pode ser comportante tanto com
+    - observable (emitindo eventos)
+    - como um obserser (captando eventos)
 
 # Dicas gerais
 - [Visualizar qual ease function escolher](https://easings.net/#)
@@ -163,3 +170,6 @@ Separa arquivo de animações e o do componente
 - Acrescentar a função cubic-bezier para personalizar a animação.
 - Criar animações simultâneas com o método group;
 - Utilizar o query para animar elementos específicos;
+- Usar classes com o método query;
+- Utilizar keyframes para criar uma animação “em etapas”;
+- Adicionar a propriedade optional: true para evitar erros nas animações.
