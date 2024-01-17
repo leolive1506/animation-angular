@@ -42,6 +42,7 @@ Separa arquivo de animações e o do componente
 ## Animation
 - quando elemento não existe necessário usar void => state para animação funcionar
   - comum em ngIf, ngFor
+  - pode usar * quando não haver mudança no estilo final
 ```ts
 // <form [@showState]="formAberto ? 'show' : 'notShow'"
 export const showStateTrigger = trigger('showState', [
@@ -93,3 +94,6 @@ export const showStateTrigger = trigger('showState', [
 - Aplicar estilos temporários durante a transição;
 - Controlar a duração da animação através do método animate;
 - Exportar animações e importá-las nos metadados do componente.
+- Aplicar animações em elementos que não estão anexados ao DOM;
+- Utilizar os estados void e coringa;
+- Melhorar o código com os alias :enter e :leave.
