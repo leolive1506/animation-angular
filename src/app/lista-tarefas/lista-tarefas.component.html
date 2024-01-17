@@ -53,7 +53,9 @@
         (click)="salvarTarefa()"
         class="botao-form"
         [ngClass]="habilitarBotao()"
-        [disabled]="!formulario.valid">
+        [disabled]="!formulario.valid"
+        [@formButton]="formulario.valid ? 'valid' : 'invalid'"
+      >
           Salvar
       </button>
       <button

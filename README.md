@@ -112,6 +112,8 @@ animate('400ms ease-out', keyframes([
 ]))
 ```
 
+## [cubic-bezier](https://cubic-bezier.com/#.17,.67,.83,.67)
+
 ## Boas praticas
 Separa arquivo de animações e o do componente
 
@@ -131,3 +133,5 @@ Separa arquivo de animações e o do componente
 - Aplicar animações em elementos que não estão anexados ao DOM;
 - Utilizar os estados void e coringa;
 - Melhorar o código com os alias :enter e :leave.
+- Utilizar keyframes e offset para criar transições suaves;
+- Acrescentar a função cubic-bezier para personalizar a animação.
