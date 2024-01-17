@@ -1,4 +1,4 @@
-# Animações
+# [Animações](https://angular.io/guide/animations)
 - fornecer feedback
 - concentrar atenção do usuário
 - mostrar que app está lidando ativamente com a suas solicitações
@@ -35,11 +35,6 @@
   [@highlightedState]="indexTarefa === i ? 'highlighted' : 'default'"
 ></div>
 ```
-
-## Boas praticas
-Separa arquivo de animações e o do componente
-
-## Animation
 - quando elemento não existe necessário usar void => state para animação funcionar
   - comum em ngIf, ngFor
   - pode usar * quando não haver mudança no estilo final
@@ -82,6 +77,27 @@ export const showStateTrigger = trigger('showState', [
   ])
 ])
 ```
+
+## trigger()
+Inicia a animação e serve como um contâiner para todas as outras chamadas de função de animação. O template é vinculado ao nome do trigger, que é declarado como primeiro argumento da função
+
+## style()
+Define um ou mais estilos CSS para usar em animações. Controla a aparência visual dos elementos HTML durante as animações
+
+## state()
+Cria um conjunto nomeado de estilos CSS que devem ser aplicados na transição bem-sucedida para um determinado estado. O estado pode então ser referenciado pelo nome dentro de outras funções de animação.
+
+## animate()
+Especifica as informações de tempo para uma transição. Valores opcionais para delay e easing function.
+- Pode conter métodos style().
+
+## transition()
+Define a sequência de animação entre dois estados nomeados
+
+## Boas praticas
+Separa arquivo de animações e o do componente
+
+
 # Dicas gerais
 - [Visualizar qual ease function escolher](https://easings.net/#)
 
