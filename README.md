@@ -94,6 +94,24 @@ Especifica as informações de tempo para uma transição. Valores opcionais par
 ## transition()
 Define a sequência de animação entre dois estados nomeados
 
+## keyframes()
+Permite adicionar estilos intermediarios (durante um animate)
+
+## offset()
+Controlar o tempo em que determinada etapa keyframes vai acontecer
+```ts
+// sem keyframes
+animate('400ms ease-out', style({
+  opacity: 1,
+  width: '*' // width de forma automatica e dinamica
+}))
+animate('400ms ease-out', keyframes([
+  style({ offset: 0, opacity: 0, width: '0' }),
+  style({ offset: 0.8, opacity: 0.5, width : '*' }),
+  style({ offset: 1, opacity: 1, width: '*' }),
+]))
+```
+
 ## Boas praticas
 Separa arquivo de animações e o do componente
 
